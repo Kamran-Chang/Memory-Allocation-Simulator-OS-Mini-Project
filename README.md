@@ -7,3 +7,5 @@ This is Mini project for operating system. it tells the functionality of memory 
 Simple UI design is given below:
 
 ![image](https://github.com/Kamran-Chang/Memory-Allocation-Simulator-OS-Mini-Project/assets/97844150/31a4b4ce-b199-49c0-b1a3-6f78fb8c4dc4)
+![image](https://github.com/Kamran-Chang/Memory-Allocation-Simulator-OS-Mini-Project/assets/97844150/c339550b-d2c7-4740-9758-35fd019407c0)
+
