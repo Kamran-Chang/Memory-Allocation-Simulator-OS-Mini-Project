@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Allocation Simulator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aqua;
+      }
+      .memory-block {
+        display: inline-block; /* Display blocks inline */
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid #ccc;
+        margin: 2px;
+        font-size: 14px;
+        background-color: white;
+      }
+      #memory-display {
+        display: flex;
+        text-align: center; /* Center the blocks */
+        white-space: nowrap; /* Prevent wrapping to the next line */
+      }
+
+      .first-fit .memory-block.job {
+        background-color: #85c1e9;
+        display: flex;
+        justify-content: center;
+      }
+
+      .best-fit .memory-block.job {
+        background-color: #f4d03f;
+        display: flex;
+        justify-content: center;
+      }
+
+      .worst-fit .memory-block.job {
+        background-color: #e74c3c;
+        display: flex;
+        justify-content: center;
+      }
+
+      .memory-block.job {
+        background-color: #85c1e9;
+        display: flex;
+        justify-content: center;
+      }
+
+      .menu {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .BlockDisplay {
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        padding: 5px 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Memory Allocation Simulator</h1>
+    <div class="menu">
+      <label for="technique">Select Allocation Technique:</label>
+      <select id="technique" onchange="selectTechnique()">
+        <option value="1">First Fit</option>
+        <option value="2">Best Fit</option>
+        <option value="3">Worst Fit</option>
+      </select>
+    </div>
+    <div class="menu">
+      <h2 id="menu-title">
+        Memory Allocation Technique:
+        <p id="technique-description"></p>
+      </h2>
+    </div>
+    <div class="BlockDisplay" id="memory-display">
+      <!-- Memory blocks will be displayed here -->
+    </div>
+    <div class="menu">
+      <input
+        type="text"
+        id="memory-size-input"
+        placeholder="Enter Memory Size"
+      />
+      <button id="enter-size-button" onclick="enterMemorySize()">
+        Enter Memory Size
+      </button>
+      <br />
+      <input type="text" id="job-number" placeholder="Enter Job Number" />
+      <input
+        type="text"
+        id="memory-required"
+        placeholder="Enter required memory"
+      />
+      <button data-action="addJobFun">Enter Job</button>
+      <br />
+      <input
+        type="text"
+        id="remove-job-input"
+        placeholder="Enter Job Number to remove"
+      />
+      <button data-action="removeJob">Remove Job</button>
+      <br />
+      <button onclick="performCompaction()">Compaction</button>
+    </div>
+
+    <script src="osminiProject.js"></script>
+  </body>
+</html>
